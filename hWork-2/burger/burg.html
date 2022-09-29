@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Burger</title>
+</head>
+
+<body>
+    <form action="#" id="hamburger-form">
+        <fieldset id="hamburger-fildset">
+            <h3 id="hamburger-top">Create your burger</h3>
+            <fieldset class="hamburger-fildset-inside">
+                <h4>Select burger size</h4>
+                <input type="radio" name="size" id="bigburger" value="big" class="hamburger-input" data-price="100"
+                    data-calories="40" checked>
+                <label for="bigburger">Большой (100р, 40кк)</label>
+                <input type="radio" name="size" id="smallburger" value="small" class="hamburger-input" data-price="50"
+                    data-calories="20">
+                <label for="smallburger">Маленький (50р, 20кк)</label>
+            </fieldset>
+            <fieldset class="hamburger-fildset-inside">
+                <h4>Select burger toppings</h4>
+                <input type="radio" name="add" id="cheese" value="Cheese" class="hamburger-input" data-price="10"
+                    data-calories="20" checked>
+                <label for="cheese">Сыр (10р, 20кк)</label>
+                <input type="radio" name="add" id="salad" value="Salad" class="hamburger-input" data-price="20"
+                    data-calories="5">
+                <label for="smallburger">Салат (20р, 5кк)</label>
+                <input type="radio" name="add" id="potato" value="Potato" class="hamburger-input" data-price="15"
+                    data-calories="10">
+                <label for="smallburger">Картошка (15р, 10кк)</label>
+            </fieldset>
+            <fieldset class="hamburger-fildset-inside">
+                <h4>Choose additional option</h4>
+                <input type="checkbox" checked name="topings" id="seasoning" value="Spices" class="hamburger-input"
+                    data-price="15" data-calories="0">
+                <label for="seasoning">Приправа (15р, 0кк)</label>
+                <input type="checkbox" checked name="topings" id="mayonnaise" value="Spices" class="hamburger-input"
+                    data-price="20" data-calories="5">
+                <label for="mayonnaise">Майонез (20р, 5кк)</label>
+            </fieldset>
+            <button id="check">Собрать бургер</button>
+            <p id="result">Итого стоимость: <span id="price">0</span><br>
+                Кол-во калорий <span id="price">0</span></p>
+        </fieldset>
+    </form>
+    <script src="burgFactory.js"></script>
+    <script>
+        window.onload = () => {
+            document.getElementById("check").addEventListener("click", e => {
+                e.preventDefault();
+                let burger = new Burger('size', 'add', 'topings');
+                console.log(burger);
+                burger.showSum('#price', '#calories')
+            })
+        }
+
+    </script>
+</body>
