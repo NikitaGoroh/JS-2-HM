@@ -18,7 +18,7 @@ class ProductList {
         const block = document.querySelector(this.container);
         for (let product of this.goods) {
             const productObj = new ProductItem(product);
-            this.AllProducts.push(productObj)
+            this.AllProducts.push(productObj);
             block.insertAdjacentHTML("beforeend", productObj.render());
         }
     }
@@ -28,7 +28,6 @@ class ProductList {
         alert(res);
     }
 }
-
 
 class ProductItem {
     constructor(product, img = 'https://via.placeholder.com/200x150') {
