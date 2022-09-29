@@ -22,11 +22,11 @@ class Burger {
     }
 
     _select(name) {
-        return document.querySelectorAll(`input[name="${name}"]:checked`)
+        return document.querySelectorAll(`input[name="${name}"]:checked`);
     }
 
     _selectAll(name) {
-        return [...document.querySelectorAll(`input[name="${name}"]:checked`)]
+        return [...document.querySelectorAll(`input[name="${name}"]:checked`)];
     }
     _sumPrice() {
         let result = this.size.price + this.add.price;
@@ -40,8 +40,8 @@ class Burger {
     }
 
     showSum(price, calories) {
-        document.querySelector(price).textContent = this._sumPrice()
-        document.querySelector(calories).textContent = this._sumCalories()
+        document.querySelector(price).textContent = this._sumPrice();
+        document.querySelector(calories).textContent = this._sumCalories();
     }
 }
 
