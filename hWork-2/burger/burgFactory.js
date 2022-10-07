@@ -1,5 +1,6 @@
 class Param {
     constructor(element) {
+        console.log(element)
         this.name = element.value;
         this.price = +element.dataset['price'];
         this.calories = +element.dataset['calories'];
@@ -22,7 +23,7 @@ class Burger {
     }
 
     _select(name) {
-        return document.querySelectorAll(`input[name="${name}"]:checked`);
+        return document.querySelector(`input[name="${name}"]:checked`);
     }
 
     _selectAll(name) {
@@ -44,6 +45,5 @@ class Burger {
         document.querySelector(calories).textContent = this._sumCalories();
     }
 }
-
 
 
